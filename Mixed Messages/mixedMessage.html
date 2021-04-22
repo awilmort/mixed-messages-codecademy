@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title> Mixed Messages</title>
+	  <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href= css/mixedMessages.css>
+	
+</head>
+
+
+<header>
+	<center><img src="images/logo.png" class="logo">
+	<h1 class="title"> Mixed Messages</h1></center>
+</header>
+
+<body class="container">
+<h1> Welcome to our Mixed Messages Random Generater!</h1>
+	<h2>Below you can generate a random sentence. Go wild!</h2>
+	
+	
+
+	
+</body>
+	<br>
+<main class="generator">
+	
+	<button onclick="generate_message">Generate<script>
+		
+			function generate() {
+			var generated_message ='';
+			var characters ='ABCDEFGHIJKLMNNOPQRSTUVWXYZ0123456789'
+			for(var i, i= 0; i < characters.length; i++){
+				generated_message += characters.charAt(Math.floor(Math.random() * characters.length))
+			}
+				console.log(generated_message)
+			}
+		
+												   </script> </button>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

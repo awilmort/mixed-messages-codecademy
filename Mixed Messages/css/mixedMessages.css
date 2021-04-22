@@ -1,0 +1,39 @@
+.title { 
+	background-color: blue;
+	border-bottom-style: outset;
+	border-color: black;
+	border-radius: 25px;
+	}
+
+.logo { 
+	background-color: black;
+	width: 200px;;
+		}
+
+body {
+    margin:0;
+    min-width: 960px;
+    font-family: tahoma, geneva, sans-serif;
+    color:black;
+	}
+
+img {
+    border: 5px;
+    border-radius: 10px;
+	border-style: outset;
+	}
+	
+.container {
+    width: 960px;
+    margin: 0 auto;
+    overflow: auto;
+	background-color: aqua;
+	}
+html {
+	background-color: darkblue;
+}
+#generate {
+	height: 100px;
+	width: 100px;
+	float: right;
+}
