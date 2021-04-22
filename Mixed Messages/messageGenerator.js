@@ -13,6 +13,6 @@ const generateMessage = (randomMessages) => {
     const middle = chooseRandomMessage(randomMessages.middle);
     const closing = chooseRandomMessage(randomMessages.closing);
     return oppening + ' ' + middle + ' ' + closing;
-}
+};
 
 export { generateMessage };

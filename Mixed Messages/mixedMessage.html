@@ -21,21 +21,9 @@
     <main class="generator">
       <button onclick="displayMessage">
         Generate
-        <script>
-          function generate() {
-            var generated_message = "";
-            var characters = "ABCDEFGHIJKLMNNOPQRSTUVWXYZ0123456789";
-            for (var i, i = 0; i < characters.length; i++) {
-              generated_message += characters.charAt(
-                Math.floor(Math.random() * characters.length)
-              );
-            }
-            console.log(generated_message);
-          }
-        </script>
       </button>
     </main>
-
-    <script src="app.js" type="text/javascript"></script>
+	<script type="text/javascript" src="messageGenerator.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
