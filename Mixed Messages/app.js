@@ -1,0 +1,2 @@
+import { generateMessage } from './messageGenerator';
+
