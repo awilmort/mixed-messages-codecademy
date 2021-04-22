@@ -5,24 +5,31 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href= css/mixedMessages.css>
   </head>
-
-  <header>
-    <center>
+  <body class="container">
+    <header>
       <img src="images/logo.png" class="logo" />
       <h1 class="title">Mixed Messages</h1>
-    </center>
-  </header>
-
-  <body class="container">
-    <h1>Welcome to our Mixed Messages Random Generater!</h1>
-    <h2>Below you can generate a random sentence. Go wild!</h2>
-    <p id="message"></p>
-    <br />
-    <main class="generator">
-      <button onclick="displayMessage">
-        Generate
-      </button>
+    </header>
+    <aside>
+      <h2>Collaborators:</h2>
+      <ul>
+        <li>Abimael</li>
+        <li>Michael</li>
+        <li>...others?</li>
+        <li>Quentin</li>
+      </ul>
+    </aside>
+    <main>
+      <article>
+        <h1>Welcome to our Mixed Messages Random Generater!</h1>
+        <h2>Below you can generate a random sentence. Go wild!</h2>
+        <button>Generate</button>
+      </article>
+      <div id="message-box">
+        <p id="message"></p>
+      </div>
     </main>
+    <footer>&copy; 2021</footer>
     <script src="app.js"></script>
   </body>
 </html>
