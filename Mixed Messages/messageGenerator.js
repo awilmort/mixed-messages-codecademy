@@ -1,7 +1,7 @@
 let randomMessages = {
-    oppening: ["Pair programming is", "Practice is"],
-    middle: ["key", "necessary", "the best idea"],
-    closing: ["to success", "to a better understanding"]
+    oppening: ["Pair programming is", "Practice is", "Dedication is", "Having a goal is", "Self belief is"],
+    middle: ["key", "necessary", "the best idea","Important","Crucial", "Fundamental"],
+    closing: ["to success", "to a better understanding", "Achieving greatness", "Reaching your potential", "Bettering yourself"]
 };
 
 const chooseRandomMessage = (messages) => {
