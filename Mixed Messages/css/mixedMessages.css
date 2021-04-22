@@ -96,6 +96,10 @@ header h2 {
   color: var(--accent-color);
 }
 
+#nice-button {
+  padding: 8px 20px;
+  margin-left: 250px;
+}
 /* ASIDE ELEMENT STYLES */
 
 aside {
