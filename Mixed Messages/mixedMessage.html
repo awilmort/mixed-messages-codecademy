@@ -3,33 +3,40 @@
   <head>
     <title>Mixed Messages</title>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href= css/mixedMessages.css>
   </head>
   <body class="container">
     <header>
-      <img src="images/logo.png" class="logo" />
-      <h1 class="title">Mixed Messages</h1>
+      <div id="logo-box" class="main-tile">
+        <img src="images/logo.png" />
+      </div>
+      <div id="title-box" class="main-tile">
+        <h1>Mixed Messages</h1>
+        <h2>Codecademy Collaboration</h2>
+      </div>
     </header>
-    <aside>
-      <h2>Collaborators:</h2>
-      <ul>
-        <li>Abimael</li>
-        <li>Michael</li>
-        <li>...others?</li>
-        <li>Quentin</li>
-      </ul>
-    </aside>
     <main>
-      <article>
+      <aside class="main-tile">
+        <h2>Collaborators:</h2>
+        <ul>
+          <li>Abimael</li>
+          <li>Michael</li>
+          <li>...others?</li>
+          <li>Quentin</li>
+        </ul>
+      </aside>
+      <article class="main-tile">
         <h1>Welcome to our Mixed Messages Random Generater!</h1>
         <h2>Below you can generate a random sentence. Go wild!</h2>
         <button>Generate</button>
       </article>
-      <div id="message-box">
-        <p id="message"></p>
+      <div id="msg-box" class="accent-tile">
+        <p id="message">"This is an example message"</p>
       </div>
     </main>
-    <footer>&copy; 2021</footer>
+    <footer class="main-tile">&copy; 2021</footer>
     <script src="app.js"></script>
   </body>
 </html>

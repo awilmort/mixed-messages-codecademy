@@ -1,39 +1,134 @@
-.title { 
-	background-color: blue;
-	border-bottom-style: outset;
-	border-color: black;
-	border-radius: 25px;
-	}
-
-.logo { 
-	background-color: black;
-	width: 200px;;
-		}
-
-body {
-    margin:0;
-    min-width: 960px;
-    font-family: tahoma, geneva, sans-serif;
-    color:black;
-	}
-
-img {
-    border: 5px;
-    border-radius: 10px;
-	border-style: outset;
-	}
-	
-.container {
-    width: 960px;
-    margin: 0 auto;
-    overflow: auto;
-	background-color: aqua;
-	}
-html {
-	background-color: darkblue;
+/* Reset Default Browser Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#generate {
-	height: 100px;
-	width: 100px;
-	float: right;
+
+/* VARIABLES */
+:root {
+  --main-color: #43767a;
+  --sec-color: #d9d5ca;
+  --accent-color: #a42828;
+}
+
+/* SHARED CLASSES */
+/* adds the effect of a tile with border and background */
+.main-tile {
+  background: var(--sec-color);
+  border: outset 4px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+}
+
+.accent-tile {
+  background: var(--accent-color);
+  border: outset 4px var(--accent-color);
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+}
+
+/* Elements — In order of appearance, top-to-bottom */
+/* BODY ELEMENT STYLES */
+body {
+  max-width: 900px;
+  font-family: tahoma, geneva, sans-serif;
+  background-color: var(--main-color);
+  display: grid; 
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  row-gap: 25px;
+  grid-template-areas: 
+  "header header" 
+  "main main"
+  "footer footer";
+}
+
+/* HEADER ELEMENT STYLES */
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 25px;
+  grid-template-rows: 175px;
+  align-items: center;
+  min-width: 100%;
+  margin-top: 25px;
+}
+
+#logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  max-height: 100%;
+  justify-self: end;
+}
+
+#title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 { 
+  font-family: 'Playfair Display', serif;
+  color: var(--main-color);
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+header h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 4px;
+  font-size: 25px;
+  color: var(--accent-color);
+}
+
+/* ASIDE ELEMENT STYLES */
+
+aside {
+  grid-area: aside;
+  justify-self: end;
+}
+
+/* MAIN ELEMENT STYLES */
+
+main {
+  min-width: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 3fr;
+  column-gap: 25px;
+  grid-template-rows: auto;
+  row-gap: 25px;
+  grid-template-areas: 
+  "aside article"
+  "aside msg-box";
+  grid-area: main;
+}
+
+article {
+  grid-area: article; 
+  justify-self: start;
+}
+
+#msg-box {
+  grid-area: msg-box;
+}
+
+/* FOOTER ELEMENT STYLES */
+footer {
+  grid-area: footer;
+  justify-self: center;
 }
