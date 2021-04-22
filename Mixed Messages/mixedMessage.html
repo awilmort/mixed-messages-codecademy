@@ -16,23 +16,26 @@
   <body class="container">
     <h1>Welcome to our Mixed Messages Random Generater!</h1>
     <h2>Below you can generate a random sentence. Go wild!</h2>
-  </body>
-  <br />
-  <main class="generator">
-    <button onclick="generate_message">
-      Generate
-      <script>
-        function generate() {
-          var generated_message = "";
-          var characters = "ABCDEFGHIJKLMNNOPQRSTUVWXYZ0123456789";
-          for (var i, i = 0; i < characters.length; i++) {
-            generated_message += characters.charAt(
-              Math.floor(Math.random() * characters.length)
-            );
+
+    <br />
+    <main class="generator">
+      <button onclick="displayMessage">
+        Generate
+        <script>
+          function generate() {
+            var generated_message = "";
+            var characters = "ABCDEFGHIJKLMNNOPQRSTUVWXYZ0123456789";
+            for (var i, i = 0; i < characters.length; i++) {
+              generated_message += characters.charAt(
+                Math.floor(Math.random() * characters.length)
+              );
+            }
+            console.log(generated_message);
           }
-          console.log(generated_message);
-        }
-      </script>
-    </button>
-  </main>
+        </script>
+      </button>
+    </main>
+
+    <script src="app.js" type="text/javascript"></script>
+  </body>
 </html>
