@@ -8,8 +8,12 @@
 /* VARIABLES */
 :root {
   --main-color: #43767a;
+  --darker-color: #37464a;
   --sec-color: #d9d5ca;
+  --lighter-color: #e8e6df;
   --accent-color: #a42828;
+  --main-font: 'Playfair Display', serif;
+  --sec-font: 'VT323', monospace;
 }
 
 /* SHARED CLASSES */
@@ -18,7 +22,6 @@
   background: var(--sec-color);
   border: outset 4px;
   width: 100%;
-  height: 100%;
   padding: 10px 15px;
 }
 
@@ -33,32 +36,37 @@
 /* Elements — In order of appearance, top-to-bottom */
 /* BODY ELEMENT STYLES */
 body {
+  padding: 25px 15px;
   max-width: 900px;
-  font-family: tahoma, geneva, sans-serif;
   background-color: var(--main-color);
   display: grid; 
   margin-left: auto;
   margin-right: auto;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: auto;
+  grid-template-columns: clamp(250px, 1fr, 400px) 3fr;
+  column-gap: 25px;
+  grid-template-rows: clamp(100px, 15vw, 175px) auto 50px;
   row-gap: 25px;
   grid-template-areas: 
-  "header header" 
-  "main main"
-  "footer footer";
+  "logo header" 
+  "aside main"
+  ". footer";
+}
+
+/* LOGO BOX */
+#logo-box {
+  grid-area: logo;
+}
+
+#logo-box img {
+  height: 100%;
 }
 
 /* HEADER ELEMENT STYLES */
 
 header {
   grid-area: header;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 25px;
-  grid-template-rows: 175px;
-  align-items: center;
   min-width: 100%;
-  margin-top: 25px;
+  min-height: 100%;
 }
 
 #logo-box {
@@ -77,58 +85,174 @@ header img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100%;
 }
 
 header h1 { 
-  font-family: 'Playfair Display', serif;
-  color: var(--main-color);
+  font-family: var(--main-font);
+  color: var(--darker-color);
   display: flex;
   justify-self: start;
   align-items: center;
-  font-size: 50px;
+  font-size: clamp(1.25rem, 4vw, 3rem);
   letter-spacing: 3px;
 }
 
 header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--sec-font);
   letter-spacing: 4px;
-  font-size: 25px;
+  font-size: clamp(1rem, 2.5vw, 1.95rem);
+  text-align: center;
   color: var(--accent-color);
 }
 
-#nice-button {
-  padding: 8px 20px;
-  margin-left: 250px;
-}
 /* ASIDE ELEMENT STYLES */
 
 aside {
   grid-area: aside;
   justify-self: end;
+  max-height: 340px;
 }
+
+aside h2 {
+  font-family: var(--main-font);
+  color: var(--darker-color);
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  font-family: var(--sec-font);
+  font-size: 28px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background: var(--lighter-color);
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0px 0px 4px;
+  color: var(--accent-color);
+}
+
+aside li img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  border: outset var(--sec-color) 1px;
+}
+
 
 /* MAIN ELEMENT STYLES */
 
 main {
   min-width: 100%;
-  display: grid; 
-  grid-template-columns: 1fr 3fr;
-  column-gap: 25px;
-  grid-template-rows: auto;
-  row-gap: 25px;
-  grid-template-areas: 
-  "aside article"
-  "aside msg-box";
+  display: flex;
+  flex-direction: column;
   grid-area: main;
+}
+
+main .accent-tile {
+  margin-top: 25px;
 }
 
 article {
   grid-area: article; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   justify-self: start;
 }
 
-#msg-box {
+article h1 {
+  color: var(--darker-color);
+  font-family: var(--main-font);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  text-align: left;
+  max-height: 192px;
+}
+
+article p {
+  margin-top: 5px;
+  font-family: var(--main-font);
+  text-align: left;
+  font-size: 1.15rem;
+}
+
+p em {
+  font-family: var(--sec-font);
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  font-style: normal;
+}
+
+article button {
+  align-self: center;
+  margin-top: 25px;
+  min-width: 100%;
+  padding: 10px;
+  background: var(--lighter-color);
+  border: outset 2px;
+  font-family: var(--sec-font);
+  font-size: 28px;
+  color: var(--accent-color);
+  transition: all 0.10s ease-out;
+}
+
+article button:hover {
+  background-color: var(--darker-color);
+  color: var(--lighter-color);
+}
+
+article button:active {
+  background-color: var(--accent-color);
+  color: var(--lighter-color);
+}
+
+.msg-box {
   grid-area: msg-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.msg-box p {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.msg-box button {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  margin-left: auto;
+  font-family: var(--sec-font);
+  font-size: 2rem;
+  color: var(--accent-color);
+  background-color: var(--lighter-color);
+  border: outset 2px;
+  transition: all 0.10s ease-out;
+}
+
+.msg-box button:hover {
+  background-color: var(--darker-color);
+  color: var(--lighter-color);
+}
+
+.msg-box button:active {
+  background-color: var(--accent-color);
+  color: var(--lighter-color);
+}
+
+.message {
+  font-family: var(--main-font);
+  font-style: italic;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--lighter-color);
 }
 
 /* FOOTER ELEMENT STYLES */

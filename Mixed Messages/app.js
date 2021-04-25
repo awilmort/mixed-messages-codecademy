@@ -1,6 +1,6 @@
 
 const btnElement = document.querySelector('button'); 
-const msgElement = document.querySelector('#message');
+const mainElement = document.querySelector('main');
 
 /** ******************************
  * Message Generator Below:
@@ -11,6 +11,9 @@ const randomMessages = {
   middle: ["key", "necessary", "the best idea","Important","Crucial", "Fundamental"],
   closing: ["to success", "to a better understanding", "Achieving greatness", "Reaching your potential", "Bettering yourself"]
 };
+
+const messageList = [];
+let msgCount = 0;
 
 const chooseRandomMessage = (messages) => {
   return messages[Math.floor(Math.random() * messages.length)];
@@ -23,14 +26,33 @@ const generateMessage = (randomMessages) => {
   return oppening + ' ' + middle + ' ' + closing;
 }
 
-
-const displayMessage = () => {
+const addMessage = () => {
   const message = generateMessage(randomMessages);
-  msgElement.innerHTML = message;
+  const msgBox = document.createElement('div');
+  msgBox.className = 'msg-box accent-tile';
+  msgBox.innerHTML = `<p class="message" data-number="${msgCount}">${message}</p><button>X</button>`;
+  messageList.push(msgBox);
+  msgCount += 1;
+  printMessages();
 };
+
+const removeMessage = (event) => {
+  const msgNode = event.target.parentElement;
+  const index = messageList.indexOf(msgNode);
+  msgNode.remove();
+  messageList.splice(index, 1);
+}
+
+function printMessages() {
+  messageList.forEach((msg) => {
+    msgBtn = msg.querySelector('button'); 
+    msgBtn.addEventListener('click', removeMessage);
+    mainElement.appendChild(msg);
+  });
+}
 
 /**
  * Event Listeners
  */
 
-btnElement.addEventListener('click', displayMessage);
+btnElement.addEventListener('click', addMessage);
