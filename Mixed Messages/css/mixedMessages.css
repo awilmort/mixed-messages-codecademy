@@ -250,7 +250,7 @@ article button:active {
 .message {
   font-family: var(--main-font);
   font-style: italic;
-  text-align: center;
+  text-align: left;
   font-size: 1.5rem;
   color: var(--lighter-color);
 }
